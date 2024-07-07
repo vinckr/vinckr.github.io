@@ -1,0 +1,165 @@
+html,
+body {
+  height: 100%;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 6rem;
+  margin: 0;
+  text-align: center;
+}
+
+p {
+  font-size: 1rem;
+  margin: 0;
+  text-align: center;
+}
+
+.legend {
+  background-color: #f0f0f0;
+  padding: 2px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  margin: auto;
+  max-width: 20%;
+  font-size: 0.75rem;
+}
+
+.legend h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.legend ul {
+  list-style: none;
+  padding: 0;
+}
+
+.legend li {
+  margin-bottom: 5px;
+}
+
+.legend li::before {
+  content: attr(data-emoji);
+  margin-right: 5px;
+}
+
+body {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 254, 234, 1) 0%,
+    rgba(255, 254, 234, 1) 35%,
+    #b7e8eb 100%
+  );
+  overflow: hidden;
+}
+
+#ocean {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #00c6ff, #0072ff);
+}
+
+.bubble {
+  position: absolute;
+  width: 6px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  animation: float 5s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-50vh);
+    opacity: 0;
+  }
+}
+
+/* 
+.wave {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="198">  <defs>    <linearGradient id="a" x1="50%" x2="50%" y1="-10.959%" y2="100%">      <stop stop-color="#57BBC1" stop-opacity=".25" offset="0%"/>      <stop stop-color="#015871" offset="100%"/>    </linearGradient>  </defs>  <path fill="url(#a)" fill-rule="evenodd" d="M.005 121C311 121 409.898-.25 811 0c400 0 500 121 789 121v77H0s.005-48 .005-77z" transform="matrix(-1 0 0 1 1600 0)"/></svg>')
+    repeat-x;
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+    swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%,
+  100% {
+    transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+} */
+
+.fish {
+  position: absolute;
+  padding: 1rem;
+  cursor: pointer;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --transition-speed: 90s; /* Default speed */
+  transition: left var(--transition-speed) linear, transform 0.3s ease-in-out;
+}
+
+@keyframes bobbing {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.fish.small {
+  font-size: 1.2rem; /* Adjust font size for small emoji */
+}
+
+.fish.medium {
+  font-size: 1.8rem; /* Adjust font size for small emoji */
+}
+
+.fish.big {
+  font-size: 2.4rem; /* Adjust font size for big emoji */
+}
+
+.fish.large {
+  font-size: 4rem; /* Adjust font size for big emoji */
+}
